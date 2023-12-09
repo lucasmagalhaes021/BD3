@@ -1,0 +1,38 @@
+
+Fizemos o projeto fisico no sqlite online usando postgresql
+
+
+-- Selecionar a média de preço dos jogos do genero FPS
+SELECT AVG(preco) from jogo WHERE genero = 'FPS';
+
+-- Selecionar a quantidade de jogos agrupado pelo genero
+SELECT COUNT(*) Quantidade, genero from jogo GROUP BY genero;
+
+-- Selecionar os jogadores que tiveram algum banimento
+SELECT primeiro_nome from usuario WHERE (nome_do_usuario IN (SELECT nome_do_usuario from banimento));
+
+-- Selecionar a quantidade de jogos de cada usuario
+SELECT COUNT (*) Quantidade, nome_do_usuario from jogo_usuario GROUP BY nome_do_usuario;
+
+-- Selecionar as insinsignias que tem o nivel de raridade maior ou igual a 3
+SELECT nome, nivel_de_raridade from insignia where nivel_de_raridade >= 3;
+
+-- Usuários que moram em países com população maior que 200M
+SELECT usuario.primeiro_nome, usuario.ultimo_nome FROM usuario, pais
+WHERE usuario.pais = pais.nome AND pais.quantidade_populacional > 200000000;
+
+-- Usuários que moram em países que falam inglês
+SELECT usuario.primeiro_nome, usuario.ultimo_nome FROM usuario, pais
+WHERE usuario.pais = pais.nome AND pais.idioma = 'Inglês';
+
+-- Selecionar a somo de todos os jogos agrupado pelo usuario
+SELECT  SUM(jogo.preco) Valor_Total,jogo_usuario.nome_do_usuario from jogo_usuario, jogo WHERE 
+jogo_usuario.nome_do_jogo = jogo.nome  GROUP BY (nome_do_usuario);
+
+-- Selecionar todos os itens de jogos ondem a empresa tem como pais a Espanha
+SELECT item.nome, jogo.nome, empresa. nome FROM item, jogo, empresa WHERE 
+item.nome_do_jogo = jogo.nome AND jogo.empresa = empresa.cnpj AND empresa.pais = 'Espanha';
+
+-- Seleciona todos os grupos de cada usuario
+SELECT grupo_usuario.nome_do_grupo, usuario.primeiro_nome from usuario, grupo_usuario WHERE
+grupo_usuario.nome_do_usuario = usuario.nome_do_usuario;
