@@ -180,3 +180,9 @@ CREATE TABLE cartao (
     owner VARCHAR(100) NOT NULL,
     CONSTRAINT foreign_owner FOREIGN KEY (owner) REFERENCES usuario(nome_do_usuario)
 );
+
+CREATE TABLE IF NOT EXISTS comissao_jogo (
+    id SERIAL PRIMARY KEY,
+    jogo_nome VARCHAR(100) REFERENCES jogo(nome),
+    valor_comissao DOUBLE PRECISION
+);

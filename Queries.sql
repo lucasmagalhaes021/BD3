@@ -1,1 +1,1 @@
-SELECT * from cartao
+SELECT * from comissao_jogo

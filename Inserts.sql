@@ -9,7 +9,10 @@ VALUES ('Brasil', 210147125, 'Português'),
 INSERT INTO empresa (cnpj, nome, data_de_fundacao, telefone, endereco, pais)
 VALUES ('12345678901234', 'Empresa A', '2000-01-01', '123456789', 'Rua A, 123', 'Brasil'),
        ('23456789012345', 'Empresa B', '1995-05-15', '987654321', 'Avenue B, 456', 'Estados Unidos'),
-       ('34567890123456', 'Empresa C', '2008-10-20', '111222333', 'Calle C, 789', 'China');
+       ('34567890123456', 'Empresa C', '2008-10-20', '111222333', 'Calle C, 789', 'China'),
+       ('98765432109876', 'Epic Games', '2020-02-15', '555444333', 'Street X, 789', 'Estados Unidos'),
+       ('87654321098765', 'Rockstar Games', '2015-07-10', '777888999', 'Avenue Y, 456', 'Estados Unidos'),
+       ('76543210987654', 'Valve', '2018-12-20', '111222333', 'Road Z, 123', 'Estados Unidos');
 
 -- Populando a tabela 'usuario'
 INSERT INTO usuario (nome_do_usuario, primeiro_nome, ultimo_nome, data_de_nascimento, pais, ultimo_login)
@@ -27,7 +30,10 @@ VALUES ('Ação', 'Jogos com foco em ação e aventura'),
 INSERT INTO jogo (nome, descricao, data_de_lancamento, preco, empresa, genero)
 VALUES ('Need For Speed', 'Descrição do Jogo 1', '2022-05-10', 50, '12345678901234', 'Ação'),
        ('Far Cry 5', 'Descrição do Jogo 2', '2021-08-20', 30, '23456789012345', 'Ação'),
-       ('Gta 6', 'Descrição do Jogo 3', '2023-01-15', 40, '34567890123456', 'Ação');
+       ('Gta 6', 'Descrição do Jogo 3', '2023-01-15', 40, '34567890123456', 'Ação'),
+       ('Fortnite', 'Jogo battleRoyale', '2023-03-10', 60, '98765432109876', 'Ação'),
+       ('Counter - Strike', 'Jogo de FPS', '2023-06-25', 45, '87654321098765', 'Ação'),
+       ('Gta 9', 'Jogo de Ação', '2023-09-15', 50, '76543210987654', 'Ação');
 
 -- Populando a tabela 'jogo_usuario'
 INSERT INTO jogo_usuario (nome_do_usuario, nome_do_jogo, data_da_compra)
